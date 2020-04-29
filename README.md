@@ -1,24 +1,29 @@
-# README
+Bites for Tikes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This rails portfolio app is build for busy parents who don't have time to plan meals for their kids everyday. This app will provide a chart, where they can plan their meals(breakfast, lunch & dinner) in advance for a whole week. They can sign up, login, log out, create a chart, add, update and delete the meals they created. I will be more than happy if this will make your life little easier. Enjoy!
 
-Things you may want to cover:
+Built With
 
-* Ruby version
+ $ Rails 6.0.2
 
-* System dependencies
+Installation
+To use this app, just clone this repo.
 
-* Configuration
+And then execute:
 
-* Database creation
+ $ bundle install
 
-* Database initialization
+Usage
+Step 1) Run: rake db:migrate after cloning the repository.
+Step 2) Run: rails s
+Open your browser and go to localhost:3000.
 
-* How to run the test suite
+Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/'mdr-uma'/bites_for_tikes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
+License
+The app is available as open source under the terms of the MIT License.
 
-* Deployment instructions
+Code of Conduct
+Everyone interacting in the bites_for_tikes project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
 
-* ...
