@@ -10,8 +10,8 @@ has_many meals
 has_many charts through meals
 
 meal
-1. type
-2. name
+1. meal_type
+2. meal_name
 3. note(for instruction if needed)
 4. user_id
 5. meal_id
