@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_04_29_234733) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string "type"
+    t.string "meal_type"
     t.string "meal_name"
     t.text "note"
     t.integer "user_id"
