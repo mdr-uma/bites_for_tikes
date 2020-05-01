@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/signin' => 'welcome#new'
   post '/signin' => 'welcome#create'
   get 'about' => 'about#index'
+  
   resources :charts
   resources :meals
   resources :users

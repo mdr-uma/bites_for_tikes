@@ -12,12 +12,11 @@
   </head>
 
   <body>
+    <%= render partial: 'partials/title'%>
+    <%= render partial: 'partials/navbar' %>
+    
     <%= yield %>
 
-    <div class="container">
-      <footer class="footer text-faded text-center py-5">
-       <p class="m-0 small">Copyright © Bites for Tikes 2020</p>
-    </footer>
-    </div>
+    <%= render partial: 'partials/footer' %>
   </body>
 </html>
