@@ -1,0 +1,15 @@
+<h2>Chart Form</h2>
+
+<%= form_for @chart do |f| %>
+<%= f.label :date %>
+<%= f.datetime_field :date%>
+<br>
+<%= f.label :day %>
+<%= f.text_field :days%>
+<br>
+<%= f.label :time %>
+<%= f.time_field :time%>
+<br>
+
+<%= f.submit%>
+<% end %>
