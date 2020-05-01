@@ -1,5 +1,4 @@
 <body> 
-<%= form_for @user do |f|%>
 
   <div class="container" style="width:60%;">
     <div class="row">
@@ -10,42 +9,46 @@
           </div>
           <div class="card-body">
             <h5 class="card-title text-center">Sign Up</h5>
-            <form class="form-signin">
-              <div class="form-label-group">
-                <%= f.text_field :name, placeholder: "Username", autofocus: true %>
-                <%= f.label :Username %>
-              </div>
+              <%= form_for @user do |f|%>
+                <div class="form-label-group">
+                <%= f.text_field :name, placeholder: "Username", autofocus: true, class: "form-control", id: "inputUsername", required: true  %>
+                <%= f.label :Username, for: "inputUsername" %>
+                </div> 
 
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
-                <label for="inputEmail">Email address</label>
-              </div>
-              
-              <hr>
+                <hr>
 
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <label for="inputPassword">Password</label>
-              </div>
-              
-              <div class="form-label-group">
-                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
-                <label for="inputConfirmPassword">Confirm password</label>
-              </div>
+                <div class="form-label-group">
+                <%= f.text_field :email, placeholder: "Email address", class: "form-control", id: "inputEmail", required: true %>
+                <%= f.label :email, for: "inputEmail" %>
+                </div>
+                
+                <hr>
 
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
-              <a class="d-block text-center mt-2 small" href="/signin">Sign In</a>
-              <hr class="my-4">
-              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
-            </form>
+                <div class="form-label-group">
+                  <%= f.password_field :password, placeholder: "password", class: "form-control", id: "inputPassword", required: true %>
+                  <%= f.label :password, for: "inputPassword" %>
+                </div>
+                
+                <hr>
+
+                <div class="form-label-group">
+                  <%= f.password_field :confirm_password, placeholder: "Confirm password", class: "form-control", id: "inputConfirmPassword", required: true %>
+                  <%= f.label :Confirm_password, for: "inputConfirmPassword" %>
+                </div>
+
+                <hr>
+
+                <%= f.submit "Sign Up", class:"btn btn-lg btn-primary btn-block text-uppercase"%>
+                <%= link_to 'Sign in', signin_path, class:"d-block text-center mt-2 small"%>
+                
+                <hr class="my-4">
+                <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
+                <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button> 
+              <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script> 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <% end %>
   </body>
   
