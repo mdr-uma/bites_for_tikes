@@ -1,0 +1,12 @@
+<%= form_for @meal do |f| %>
+<%= f.label :meal_name %>
+<%= f.text_field :meal_name %>
+
+<%= f.label :meal_type %>
+<%= f.text_field :meal_type %>
+
+<%= f.label :note %>
+<%= f.text_field :note %>
+
+<%= f.submit %>
+<% end %>
