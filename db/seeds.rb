@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: 'Uma', email: 'uma@gmail.com', password: 'uma')
-User.create(name: 'Umesh', email: 'umesh@gmail.com', password: 'umesh')
+# User.create(name: 'Uma', email: 'uma@gmail.com', password: 'uma')
+# User.create(name: 'Umesh', email: 'umesh@gmail.com', password: 'umesh')
 
-Meal.create(meal_type: 'breakfast', meal_name: 'french toast', note: 'none' )
-Meal.create(meal_type: 'lunch', meal_name: 'chicken wrap', note: 'none')
-Meal.create(meal_type: 'dinner', meal_name: 'spring roll', note: 'none')
+# Meal.create(meal_type: 'breakfast', meal_name: 'french toast', note: 'none' )
+# Meal.create(meal_type: 'lunch', meal_name: 'chicken wrap', note: 'none')
+# Meal.create(meal_type: 'dinner', meal_name: 'spring roll', note: 'none')
 
-Chart.create(date:Date.current, days: 'sunday', time: '8am')
+# Chart.create(date:Date.current, days: 'sunday', time: '8am')
 

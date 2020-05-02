@@ -1,0 +1,17 @@
+<h3>Here is Today's menu'</h3>
+
+<table>
+    <tr>
+        <th>Meal type</th>
+        <th>Name</th>
+        <th>Note</th>
+    </tr>
+
+    <% @meals.each do |meal| %>
+        <tr>
+            <td><%= meal.meal_type %></td>
+            <td><%= meal.meal_name %></td>
+            <td><%= meal.note%></td>
+        </tr>
+    <% end %>
+</table>
