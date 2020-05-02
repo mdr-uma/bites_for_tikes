@@ -1,11 +1,30 @@
 class MealsController < ApplicationController
 
+    # def index
+    #     if params[:chart_id]
+    #     @chart = Chart.find_by(id: params[:chart_id])
+    #         if @chart.nil?
+    #             redirect_to charts_path, alert: "Chart not found"
+    #         else
+    #             @meals = @chart.meals
+    #         end
+    #     else
+    #         @meals = Meal.all
+    #     end
+    # end
     def index
-        @meals = Meal.all
+        if params[:chart_id].present?
+
+            @chart = Chart.find_by(id: params[:chart_id])
+            @meals = @chart.meals
+        else
+            @meals = Meal.all
+        end
     end
-    
+
     def new
-        @meal = Meal.new
+        @chart = Chart.find_by(id: params[:chart_id])
+        @meal = @chart.meals.build
     end
 
     def show
@@ -15,7 +34,7 @@ class MealsController < ApplicationController
     def create
         @meal = Meal.new(meal_params)
         if @meal.save
-            redirect_to meal_path(@meal)
+            redirect_to chart_meals_path(@meal.chart)
         else
             redirect_to new_meal_path
         end
@@ -24,7 +43,7 @@ class MealsController < ApplicationController
     private
 
     def meal_params
-        params.require(:meal).permit(:meal_name, :meal_type, :note)
+        params.require(:meal).permit(:meal_name, :meal_type, :note, :chart_id)
     end
 
 end
