@@ -1,13 +1,21 @@
-<table>
-    <tr>
+
+        
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr class="table-danger">
         <th>Meal type</th>
         <th>Name</th>
         <th>Note</th>
-    </tr>
-      <tr>
-          <td><%= @meal.meal_type %></td>
-          <td><%= @meal.meal_name %></td>
-          <td><%= @meal.note%></td>
       </tr>
-</table>
-        
+    </thead>
+    <tbody>
+      <tr class="table-info">
+        <td><%= @meal.meal_type %></td>
+        <td><%= @meal.meal_name %></td>
+        <td><%= @meal.note%></td>
+      </tr>      
+      
+    </tbody>
+  </table>
+</div>

@@ -1,39 +1,47 @@
+<div class="container">
+
 <% if @meals[0].chart %>
 <h3>Here is <%= @meals[0].chart.days %>'s menu</h3>
-
-<table>
-    <tr>
+<table class="table">
+    <thead>
+    <tr class="table-danger">
         <th>Meal type</th>
         <th>Name</th>
         <th>Note</th>
     </tr>
-
+    </thead>
+    <tbody>
     <% @meals.each do |meal| %>
-        <tr>
+      <tr class="table-info">
             <td><%= meal.meal_type %></td>
             <td><%= meal.meal_name %></td>
             <td><%= meal.note %></td>
         </tr>
     <% end %>
+    </tbody>
 </table>
-<%= link_to 'BACK', new_chart_meal_path(@meals[0].chart) %>
+    <%= link_to 'BACK', new_chart_meal_path(@meals[0].chart) %>
 <%else%>
-<table>
-    <tr>
+<table class="table">
+    <thead>
+    <tr class="table-danger">       
         <th>Meal type</th>
         <th>Name</th>
         <th>Note</th>
     </tr>
+    </thead>
+    <tbody>
 
     <% @meals.each do |meal| %>
-        <tr>
+      <tr class="table-info">
             <td><%= meal.meal_type %></td>
             <td><%= meal.meal_name %></td>
             <td><%= meal.note %></td>
         </tr>
     <% end %>
+    </tbody>
 </table>
 <%end%>
 <br>
-
 <%= link_to 'BACK', charts_path %>
+</div>
