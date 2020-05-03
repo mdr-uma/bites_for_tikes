@@ -3,7 +3,7 @@
     <p>Day: <%= @chart.days %></p>
     <p>Time: <%= @chart.normalize_time %></p>
 
-    <h5>Click below to add meals</h5>
+    <h5> Click below to add meals </h5>
 
-    <%= link_to 'Add Meals', new_chart_meal_path(@chart)%>
+    <p><%= link_to 'Add Meals', new_chart_meal_path(@chart)%></p>
 </div>
