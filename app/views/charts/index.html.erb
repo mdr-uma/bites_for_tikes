@@ -8,6 +8,7 @@
             <td><%= chart.normalize_time %></td>
             <td><%= link_to 'Show', chart_path(chart)%></td> 
             <td><%= link_to 'Edit', edit_chart_path(chart)%></td>
+            <td><%= link_to 'Remove', chart_path(chart)%></td>
         </tr>
         <% end %>
     </tbody>
