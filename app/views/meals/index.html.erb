@@ -20,7 +20,7 @@
     <% end %>
     </tbody>
 </table>
-    <%= link_to 'BACK', new_chart_meal_path(@meals[0].chart) %>
+    <%= link_to 'Creat Anothor Meal', new_chart_meal_path(@meals[0].chart), class:"btn btn-secondary" %> <br>
 <%else%>
   <table class="table table-hover">
     <thead>
@@ -43,5 +43,5 @@
 </table>
 <%end%>
 <br>
-<%= link_to 'BACK', charts_path %>
+<%= link_to 'Back to Charts', charts_path, class:"btn btn-secondary" %>
 </div>
