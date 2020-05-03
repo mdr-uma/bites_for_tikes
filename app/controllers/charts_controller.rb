@@ -1,6 +1,11 @@
 class ChartsController < ApplicationController
     def index
-        @charts = Chart.all
+        if params[:user_id].present?
+            @user = User.find_by(id: params[:user_id])
+            @charts = @user.charts
+        else
+            @charts = Chart.all
+        end
     end
 
     def new

@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   post '/signin' => 'welcome#create'
   get 'about' => 'about#index'
   
+  resources :users do
+    resources :charts, only: [:index, :show]
+  end
   resources :charts do 
     resources :meals, only: [:new, :show, :index]
   end
-  resources :meals
-  resources :users
+    resources :meals
+
 end
