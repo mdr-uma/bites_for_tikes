@@ -14,7 +14,6 @@ class MealsController < ApplicationController
     # end
     def index
         if params[:chart_id].present?
-
             @chart = Chart.find_by(id: params[:chart_id])
             @meals = @chart.meals
         else

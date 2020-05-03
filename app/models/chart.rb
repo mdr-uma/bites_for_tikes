@@ -1,5 +1,5 @@
 class Chart < ApplicationRecord
-    has_many :meals
+    has_many :meals, dependent: :destroy
     has_many :users, through: :meals
 
     def normalize_date
