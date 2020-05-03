@@ -2,7 +2,7 @@
 
 <% if @meals[0].chart %>
 <h3>Here is <%= @meals[0].chart.days %>'s menu</h3>
-<table class="table">
+  <table class="table table-hover">
     <thead>
     <tr class="table-danger">
         <th>Meal type</th>
@@ -22,7 +22,7 @@
 </table>
     <%= link_to 'BACK', new_chart_meal_path(@meals[0].chart) %>
 <%else%>
-<table class="table">
+  <table class="table table-hover">
     <thead>
     <tr class="table-danger">       
         <th>Meal type</th>
