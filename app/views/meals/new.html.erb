@@ -1,18 +1,20 @@
-<%= form_for @meal do |f| %>
+<div class="container">
+    <%= form_for @meal do |f| %>
 
-<%= f.hidden_field :chart_id, value: @meal.chart.id %>
+    <%= f.hidden_field :chart_id, value: @meal.chart.id %>
 
-<%= f.label :meal_name %>
-<%= f.text_field :meal_name %>
-<br>
-<br>
-<%= f.label :meal_type %>
-<%= f.select(:meal_type, options_for_select([['BREAKFAST', 'BREAKFAST'],['LUNCH', 'LUNCH'],['DINNER', 'DINNER']])) %>
-<br>
-<br>
-<%= f.label :note %>
-<%= f.text_field :note %>
-<br>
-<br>
-<%= f.submit %>
-<% end %>
+    <%= f.label :meal_name %>
+    <%= f.text_field :meal_name %>
+    <br>
+    <br>
+    <%= f.label :meal_type %>
+    <%= f.select(:meal_type, options_for_select([['BREAKFAST', 'BREAKFAST'],['LUNCH', 'LUNCH'],['DINNER', 'DINNER']])) %>
+    <br>
+    <br>
+    <%= f.label :note %>
+    <%= f.text_field :note %>
+    <br>
+    <br>
+    <%= f.submit %>
+    <% end %>
+</div>

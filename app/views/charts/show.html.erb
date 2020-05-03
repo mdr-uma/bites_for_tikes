@@ -1,7 +1,9 @@
-<p>Date: <%= @chart.normalize_date %></p>
-<p>Day: <%= @chart.days %></p>
-<p>Time: <%= @chart.normalize_time %></p>
+<div class="container">
+    <p>Date: <%= @chart.normalize_date %></p>
+    <p>Day: <%= @chart.days %></p>
+    <p>Time: <%= @chart.normalize_time %></p>
 
-<h5>Click below to add meals</h5>
+    <h5>Click below to add meals</h5>
 
-<%= link_to 'Add Meals', new_chart_meal_path(@chart)%>
+    <%= link_to 'Add Meals', new_chart_meal_path(@chart)%>
+</div>
