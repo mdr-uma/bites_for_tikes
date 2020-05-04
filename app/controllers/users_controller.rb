@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        raise params.inspect
         params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end
