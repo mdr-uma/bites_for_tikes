@@ -2,16 +2,16 @@ Rails.application.routes.draw do
   # get 'welcome/home'
   root 'welcome#home'
   get '/signup' => 'users#new'
-  get '/signin' => 'welcome#new'
-  post '/signin' => 'welcome#create'
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
+  get '/signout' => 'sessions#destroy'
   get 'about' => 'about#index'
   
-  resources :users do
-    resources :charts, only: [:index, :show]
-  end
   resources :charts do 
     resources :meals, only: [:new, :show, :index]
   end
-    resources :meals
-
+  resources :meals
+  resources :users do
+    resources :charts, only: [:index, :show]
+  end
 end
