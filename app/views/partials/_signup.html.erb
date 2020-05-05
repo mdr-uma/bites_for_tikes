@@ -11,6 +11,7 @@
             <h5 class="card-title text-center">Sign Up</h5>
              <div class="form-signin">  
               <%= form_for @user do |f|%>
+              <!-- <%= render partial: 'errors' %> -->
                 <div class="form-label-group">
                 <%= f.text_field :name, placeholder: "Username", autofocus: true, class: "form-control", id: "inputUsername", required: true  %>
                 <%= f.label :Username, for: "inputUsername" %>
