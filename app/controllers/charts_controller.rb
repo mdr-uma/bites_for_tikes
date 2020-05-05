@@ -31,7 +31,7 @@ class ChartsController < ApplicationController
 
     def update
         @chart = Chart.find(params[:id])
-        if @chart.update(date: params[:chart][:date], days: params[:chart][:days], time: params[:chart][:time])
+        if @chart.update(chart_params) #(date: params[:chart][:date], days: params[:chart][:days], time: params[:chart][:time])
             redirect_to charts_path
         else
             render :edit
