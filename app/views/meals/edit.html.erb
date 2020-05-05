@@ -2,6 +2,7 @@
     <%= form_for @meal do |f| %>
 
     <%= f.hidden_field :chart_id, value: @meal.chart.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
 
     <%= f.label :meal_name %>
     <%= f.text_field :meal_name %>
