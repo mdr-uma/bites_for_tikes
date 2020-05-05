@@ -38,6 +38,12 @@ class ChartsController < ApplicationController
         end
     end
 
+    def destroy
+        @chart = Chart.find(params[:id])  
+        @chart.destroy
+        redirect_to charts_path   
+    end
+
     private
 
     def chart_params
