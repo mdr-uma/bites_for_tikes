@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-
+    
     # def index
     #     if params[:chart_id]
     #     @chart = Chart.find_by(id: params[:chart_id])
@@ -36,6 +36,19 @@ class MealsController < ApplicationController
             redirect_to chart_meals_path(@meal.chart)
         else
             redirect_to new_meal_path
+        end
+    end
+
+    def edit
+        @meal = Meal.find(params[:id])
+    end
+
+    def update
+        @meal = Meal.find(params[:id])
+        if @meal.update(meal_name: params[:meal][:meal_name], meal_type: params[:meal][:meal_type], note: params[:meal][:note])
+            redirect_to chart_meals_path(@meal.chart)
+        else
+            render :edit
         end
     end
 
