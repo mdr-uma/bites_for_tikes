@@ -45,11 +45,17 @@ class MealsController < ApplicationController
 
     def update
         @meal = Meal.find(params[:id])
-        if @meal.update(meal_name: params[:meal][:meal_name], meal_type: params[:meal][:meal_type], note: params[:meal][:note])
+        if @meal.update(meal_params) #(meal_name: params[:meal][:meal_name], meal_type: params[:meal][:meal_type], note: params[:meal][:note])
             redirect_to chart_meals_path(@meal.chart)
         else
             render :edit
         end
+    end
+
+    def destroy 
+        @meal = Meal.find(params[:id])
+        @meal.destroy
+        redirect_to chart_meals_path(@meal.chart)
     end
 
     private
