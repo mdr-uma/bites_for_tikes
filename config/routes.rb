@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :meals, only: [:new, :show, :index]
   end
   resources :meals
-  resources :users do
+  resources :users, except: :index do
     resources :charts, only: [:index, :show]
   end
 end
