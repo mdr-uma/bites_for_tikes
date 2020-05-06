@@ -30,4 +30,9 @@ has_many users through meals
 
 To do
 
-make empty chart visiable 
+ -make empty chart visiable 
+ -display the error messages
+ -handles logged in or not?
+ -put the logic on no other users can visit someone else profile 
+ -fix the about page's picture(needs to be small and centered)
+ -move copyright logo on bottom in charts index page.
