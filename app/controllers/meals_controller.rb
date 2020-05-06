@@ -35,7 +35,7 @@ class MealsController < ApplicationController
         if @meal.save
             redirect_to chart_meals_path(@meal.chart)
         else
-            redirect_to new_meal_path
+            render :new
         end
     end
 
