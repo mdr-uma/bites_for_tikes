@@ -7,15 +7,15 @@ class ChartsController < ApplicationController
             @charts = Chart.all
         end
     end
-
+    
     def new
         @chart = Chart.new
     end
-
+    
     def show
         @chart = Chart.find(params[:id])
     end
-
+    
     def create
         @chart = Chart.new(chart_params)
         if @chart.save
@@ -32,16 +32,16 @@ class ChartsController < ApplicationController
     def update
         @chart = Chart.find(params[:id])
         if @chart.update(chart_params) #(date: params[:chart][:date], days: params[:chart][:days], time: params[:chart][:time])
-            redirect_to charts_path
+            redirect_to user_charts_path(current_user)
         else
             render :edit
         end
     end
 
     def destroy
-        @chart = Chart.find(params[:id])  
+        @chart = Chart.find(params[:id]) 
         @chart.destroy
-        redirect_to charts_path   
+        redirect_to user_charts_path(current_user)   
     end
 
     private
