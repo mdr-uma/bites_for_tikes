@@ -2,7 +2,7 @@ class ChartsController < ApplicationController
     def index
         if params[:user_id].present?
             @user = User.find_by(id: params[:user_id])
-            @charts = @user.charts
+            @charts = @user.charts.uniq
         else
             @charts = Chart.all
         end
