@@ -3,7 +3,7 @@
 
   <%= form_for @user, url: signin_path  do |f|%>
       <div class="form-label-group">
-        <%= f.text_field :email, placeholder: "Email address", class: "form-control", id: "inputEmail", required: true %>
+        <%= f.email_field :email, placeholder: "Email address", class: "form-control", id: "inputEmail", required: true %>
         <%= f.label :email, for: "inputEmail" %>
       </div>
 
