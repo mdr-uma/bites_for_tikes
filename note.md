@@ -28,3 +28,6 @@ has_many meals
 has_many users through meals
 
 
+To do
+
+make empty chart visiable 
