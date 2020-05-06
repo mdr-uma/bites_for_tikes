@@ -1,5 +1,4 @@
 <%= render partial: "partials/signup" %>
-<%= render partial: "layouts/errors", locals: {object: @user} %>
     <%= form_for @user do |f|%>
         <div class="form-label-group">
             <%= f.text_field :name, placeholder: "Username", autofocus: true, class: "form-control", id: "inputUsername", required: true  %>
