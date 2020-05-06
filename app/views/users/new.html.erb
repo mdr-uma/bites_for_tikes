@@ -1,1 +1,34 @@
-<%= render partial: 'partials/signup'%>
+<%= render partial: "partials/signup" %>
+<%= render partial: "layouts/errors", locals: {object: @user} %>
+    <%= form_for @user do |f|%>
+        <div class="form-label-group">
+            <%= f.text_field :name, placeholder: "Username", autofocus: true, class: "form-control", id: "inputUsername", required: true  %>
+            <%= f.label :Username, for: "inputUsername" %>
+        </div> 
+
+        <hr>
+
+        <div class="form-label-group">
+            <%= f.text_field :email, placeholder: "Email address", class: "form-control", id: "inputEmail", required: true %>
+            <%= f.label :email, for: "inputEmail" %>
+        </div>
+                
+        <hr>
+
+        <div class="form-label-group">
+            <%= f.password_field :password, placeholder: "password", class: "form-control", id: "inputPassword", required: true %>
+            <%= f.label :password, for: "inputPassword" %>
+        </div>
+                
+        <hr>
+
+        <div class="form-label-group">
+            <%= f.password_field :confirm_password, placeholder: "Confirm password", class: "form-control", id: "inputConfirmPassword", required: true %>
+            <%= f.label :Confirm_password, for: "inputConfirmPassword" %>
+        </div>
+
+        <hr>
+
+        <%= f.submit "Sign Up", class:"btn btn-lg btn-primary btn-block text-uppercase"%>
+        <%= render partial: 'partials/signup_footer'%>
+    <% end %>
