@@ -1,8 +1,9 @@
-<div class="container">
+<%= render partial: 'partials/formheader'%>
 
 <h1> Welcome, <%= @user.name %></h1>
 
 Click below to create a new Chart <br>
-
+<hr>
 <%= link_to "Create a new Chart", new_chart_path %>
-</div>
+<%= render partial: 'partials/formsfooter'%>
+

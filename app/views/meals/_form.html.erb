@@ -1,6 +1,5 @@
-<%= render partial: 'partials/formheader'%>
 <%= render partial: "layouts/errors", locals: {object: @meal} %>
-
+<%= render partial: 'partials/formheader'%>
     <%= form_for @meal do |f| %>
 
     <%= f.hidden_field :chart_id, value: @meal.chart.id %>

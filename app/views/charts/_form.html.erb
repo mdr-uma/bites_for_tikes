@@ -1,7 +1,8 @@
+<%= render partial: "layouts/errors", locals: {object: @chart} %>
 <%= render partial: 'partials/formheader'%>
 <div class="container">
     <h2>Chart Form</h2>
-    <%= render partial: "layouts/errors", locals: {object: @chart} %>
+    
     <%= form_for @chart do |f| %>
         <%= f.label :date %>
         <%= f.date_field :date, min: Date.current %>
