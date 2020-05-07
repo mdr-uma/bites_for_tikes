@@ -19,7 +19,7 @@
             <td><%= meal.meal_name %></td>
             <td><%= meal.note %></td>
             <td><%= link_to 'Edit', edit_meal_path(meal)%></td>
-            <td><%= link_to 'Remove',meal_path(meal), method: :delete %></td>
+            <td><%= link_to 'X',meal_path(meal), method: :delete %></td>
         </tr>
     <% end %>
     </tbody>
