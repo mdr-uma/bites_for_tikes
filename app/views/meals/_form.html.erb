@@ -1,4 +1,4 @@
-<div class="container">
+<%= render partial: 'partials/formheader'%>
 <%= render partial: "layouts/errors", locals: {object: @meal} %>
 
     <%= form_for @meal do |f| %>
@@ -8,16 +8,13 @@
 
     <%= f.label :meal_name %>
     <%= f.text_field :meal_name %>
-    <br>
-    <br>
+    <hr>
     <%= f.label :meal_type %>
     <%= f.select(:meal_type, options_for_select([['Breakfast', 'Breakfast'],['Lunch', 'Lunch'],['Dinner', 'Dinner']])) %>
-    <br>
-    <br>
+    <hr>
     <%= f.label :note %>
     <%= f.text_area :note %>
-    <br>
-    <br>
+    <hr>
     <%= f.submit %>
     <% end %>
-</div>
+<%= render partial: 'partials/formsfooter'%>
