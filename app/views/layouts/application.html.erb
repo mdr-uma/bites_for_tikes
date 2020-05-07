@@ -4,13 +4,14 @@
     <title>BitesForTikes</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -19,12 +20,14 @@
     <%= render partial: 'partials/title'%>
     <%= render partial: 'partials/navbar' %>
     <%= render partial: "layouts/errors", locals: {object: @user} %>
-
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto", style="color:red;">
+      <% if flash[:alert] %>
+        <%= flash[:alert] %>
+      <% end %>
+    </div>
     
     <%= yield %>
 
     <%= render partial: 'partials/footer' %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script> 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
