@@ -8,9 +8,10 @@
             <td><%= chart.normalize_time %></td>
             <td><%= link_to 'Show', chart_path(chart)%></td> 
             <td><%= link_to 'Edit', edit_chart_path(chart)%></td>
-            <td><%= link_to 'Remove', chart_path(chart), method: :delete %></td>
+            <td><%= link_to 'X', chart_path(chart), method: :delete %></td>
         </tr>
         <% end %>
     </tbody>
-    <%= link_to "Create an another Chart", new_chart_path %>
+    </table>
+<%= link_to "Create an another Chart", new_chart_path, class:"btn btn-secondary" %>
 </div>
