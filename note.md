@@ -41,9 +41,8 @@ child
 
 To do
 
- -make empty chart visiable 
  -handles logged in or not?
- -put the logic on no other users can't visit someone else profile 
+ -put the logic on no other users can visit someone else profile 
  -fix the about page's picture(needs to be small and centered)
  -need to add omniauth function and scope function.
 
