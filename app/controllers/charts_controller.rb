@@ -1,6 +1,6 @@
 class ChartsController < ApplicationController
     def index   
-        @charts = Chart.all   
+        @charts = Chart.all.most_recent   
     end
     
     def new
