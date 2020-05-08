@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-    before_action :require_logged_in
-    skip_before_action :require_logged_in, only: [:new, :create]
+    before_action :require_logged_in, except: [:new, :create]
     
     def index
         
