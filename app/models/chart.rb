@@ -1,8 +1,9 @@
 class Chart < ApplicationRecord
+    scope :most_recent, -> {order("date desc")}
     has_many :meals, dependent: :destroy
     has_many :users, through: :meals
 
-    validates :date, :days, :time, presence: true
+    validates :date, :time, presence: true
 
     def normalize_date
         date.strftime("%B %d, %Y")
