@@ -27,25 +27,6 @@
     <%= link_to 'Create Another Meal', new_chart_meal_path(@chart), class:"btn btn-secondary" %> <br>
     <br>
 <%else%>
-   <table class="table table-hover">
-    <thead>
-    <tr class="table-danger">       
-        <th>Meal type</th>
-        <th>Name</th>
-        <th>Note</th>
-    </tr>
-    </thead>
-    <tbody>
-
-    <% @meals.each do |meal| %>
-      <tr class="table-info">
-            <td><%= meal.meal_type %></td>
-            <td><%= meal.meal_name %></td>
-            <td><%= meal.note %></td>
-        </tr>
-    <% end %>
-    </tbody>
-</table>
-<%end%>
-<br>
+    <%= render "index" %>
+<% end %>
 </div>
