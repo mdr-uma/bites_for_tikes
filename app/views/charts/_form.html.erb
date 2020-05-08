@@ -7,9 +7,6 @@
         <%= f.label :date %>
         <%= f.date_field :date, min: Date.current %>
         <hr>
-        <%= f.label :day %>
-        <%= f.select(:days, options_for_select([['Sunday', 'Sunday'],['Monday', 'Monday'], ['Tuesday', 'Tuesday'],['Wednesday', 'Wednesday'], ['Thursday', 'Thursday'], ['Friday', 'Friday'], ['Saturday', 'Saturday']]))%>
-        <hr>
         <%= f.label :time %>
         <%= f.time_field :time %>
         <hr>

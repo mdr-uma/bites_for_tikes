@@ -13,7 +13,7 @@
               <%= link_to 'Sign Out', signout_path, method: :delete, class:"nav-link text-uppercase text-expanded" %>
           </li>
           <li class="nav-item px-lg-4">
-              <%= link_to 'My Charts', user_charts_path(current_user), class:"nav-link text-uppercase text-expanded" %>
+              <%= link_to 'My Charts',charts_path, class:"nav-link text-uppercase text-expanded" %>
           </li>
           <li class="nav-item px-lg-4">
             <h6>Hi,<%= current_user.name %>!</h6>

@@ -3,7 +3,6 @@ class CreateCharts < ActiveRecord::Migration[6.0]
     create_table :charts do |t|
       t.datetime :date
       t.datetime :time
-      t.string :days
       
       t.timestamps
     end

@@ -13,5 +13,5 @@
 # Meal.create(meal_type: 'lunch', meal_name: 'chicken wrap', note: 'none')
 # Meal.create(meal_type: 'dinner', meal_name: 'spring roll', note: 'none')
 
-# Chart.create(date:Date.current, days: 'sunday', time: '8am')
+#  Chart.create(date:05/8/2020, time: '8am')
 

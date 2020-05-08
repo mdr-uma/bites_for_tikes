@@ -5,10 +5,10 @@ class Chart < ApplicationRecord
     validates :date, :days, :time, presence: true
 
     def normalize_date
-        self.date = date.strftime("%B %d, %Y")
+        date.strftime("%B %d, %Y")
     end
 
     def normalize_time
-        self.time = time.strftime("%I:%M %p")
+        time.strftime("%I:%M %p")
     end
 end

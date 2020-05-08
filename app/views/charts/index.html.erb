@@ -4,11 +4,16 @@
         <% @charts.each do |chart| %>
         <tr class="table-info">
             <td><%= chart.normalize_date %></td>
-            <td><%= chart.days %></td>
+            <td><%= chart.date.strftime("%A") %></td>
             <td><%= chart.normalize_time %></td>
-            <td><%= link_to 'Show', chart_path(chart)%></td> 
+            <td><%= link_to 'Show', chart_path(chart)%></td>
             <td><%= link_to 'Edit', edit_chart_path(chart)%></td>
             <td><%= link_to 'X', chart_path(chart), method: :delete %></td>
+            <%if chart.users.first %>
+            <td>Created By, <%= chart.users.first.name %></td>
+            <% else %>
+            <td></td>
+            <% end %>
         </tr>
         <% end %>
     </tbody>

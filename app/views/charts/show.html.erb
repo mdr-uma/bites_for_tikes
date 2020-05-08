@@ -2,7 +2,7 @@
 <div class="container">
     <p>Date: <%= @chart.normalize_date %></p>
     <hr>
-    <p>Day: <%= @chart.days %></p>
+    <p>Day: <%= @chart.date.strftime("%A") %></p>
     <hr>
     <p>Time: <%= @chart.normalize_time %></p>
     <hr>
