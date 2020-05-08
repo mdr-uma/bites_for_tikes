@@ -1,17 +1,6 @@
 class MealsController < ApplicationController
+    before_action :require_logged_in
     
-    # def index
-    #     if params[:chart_id]
-    #     @chart = Chart.find_by(id: params[:chart_id])
-    #         if @chart.nil?
-    #             redirect_to charts_path, alert: "Chart not found"
-    #         else
-    #             @meals = @chart.meals
-    #         end
-    #     else
-    #         @meals = Meal.all
-    #     end
-    # end
     def index
         if params[:chart_id].present?
             @chart = Chart.find_by(id: params[:chart_id])

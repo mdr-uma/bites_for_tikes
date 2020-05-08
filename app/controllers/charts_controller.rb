@@ -1,4 +1,6 @@
 class ChartsController < ApplicationController
+    before_action :require_logged_in
+    
     def index   
         @charts = Chart.all.most_recent   
     end
