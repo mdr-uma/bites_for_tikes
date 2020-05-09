@@ -1,5 +1,16 @@
 <div class="container">
     <table class="table table-hover">
+    <thead>
+    <tr class="table-danger">
+        <th>Date</th>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Remove</th>
+        <th>Creator</th>
+    </tr>
+    </thead>
     <tbody>
         <% @charts.each do |chart| %>
         <tr class="table-info">
@@ -8,20 +19,20 @@
             <td><%= chart.normalize_time %></td>
             <td><%= link_to 'Show', chart_path(chart)%></td>
             <%if chart.users.first == current_user %> 
-            <td><%= link_to 'Edit', edit_chart_path(chart)%></td>
-            <td><%= link_to 'X', chart_path(chart), method: :delete %></td>
+                <td><%= link_to 'Edit', edit_chart_path(chart)%></td>
+                <td><%= link_to 'X', chart_path(chart), method: :delete, class:"btn-danger"%></td>
             <%else%>
-            <td></td>
-            <td></td>
+                <td></td>
+                <td></td>
             <%end%>
             <%if chart.users.first %>
-            <td>Created By, <%= chart.users.first.name %></td>
+                <td>Created By, <%= chart.users.first.name %></td>
             <% else %>
-            <td></td>
+                <td></td>
             <% end %>
         </tr>
         <% end %>
     </tbody>
     </table>
-<%= link_to "Create an another Chart", new_chart_path, class:"btn btn-secondary" %>
+<%= link_to "Create an another Chart", new_chart_path, class:"btn btn-success" %>
 </div>
