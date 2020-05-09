@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_170410) do
+ActiveRecord::Schema.define(version: 2020_05_09_025212) do
 
   create_table "charts", force: :cascade do |t|
     t.datetime "date"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_170410) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
   end
 
 end
