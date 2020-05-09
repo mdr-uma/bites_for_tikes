@@ -30,11 +30,15 @@ class MealsController < ApplicationController
 
     def edit
         @meal = Meal.find(params[:id])
+        if current_user.id != @meal.id
+            redirect_to chart_meals_path(@meal.chart),
+            alert: "You don't have access to edit this meal."
+        end
     end
 
     def update
         @meal = Meal.find(params[:id])
-        if @meal.update(meal_params) #(meal_name: params[:meal][:meal_name], meal_type: params[:meal][:meal_type], note: params[:meal][:note])
+        if @meal.update(meal_params) 
             redirect_to chart_meals_path(@meal.chart)
         else
             render :edit

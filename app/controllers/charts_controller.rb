@@ -25,6 +25,10 @@ class ChartsController < ApplicationController
 
     def edit
         @chart = Chart.find(params[:id])
+        if current_user.id != @chart.id
+            redirect_to charts_path,
+            alert: "You don't have access to edit this chart."
+        end
     end
 
     def update
