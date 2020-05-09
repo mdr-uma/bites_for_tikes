@@ -4,6 +4,7 @@
         <th>Meal type</th>
         <th>Name</th>
         <th>Note</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -13,6 +14,11 @@
             <td><%= meal.meal_type %></td>
             <td><%= meal.meal_name %></td>
             <td><%= meal.note %></td>
+            <%if meal.user %>
+                <td>Created By, <%= meal.user.name %></td>
+            <% else %>
+                <td></td>
+            <% end %>
         </tr>
     <% end %>
     </tbody>

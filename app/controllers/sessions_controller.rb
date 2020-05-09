@@ -4,15 +4,19 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(email: params[:user][:email])
-        if @user && @user.authenticate(params[:user][:password])
+        if auth = request.env["omniauth.auth"]
+            @user = User.find_or_create_by_omniauth(auth)
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to root_path
         else
-            # @user.errors.add(:password, :invalid, message: "incorrect")
-            # render :new
-            redirect_to signin_path,
-            alert: "Invalid email or password. Please try again."
+            @user = User.find_by(email: params[:user][:email])
+            if @user && @user.authenticate(params[:user][:password])
+                session[:user_id] = @user.id
+                redirect_to user_path(@user)
+            else
+                redirect_to signin_path,
+                alert: "Invalid email or password. Please try again."
+            end
         end
     end
 

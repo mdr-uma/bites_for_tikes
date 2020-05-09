@@ -16,5 +16,6 @@ module BitesForTikes
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    # config.active_record.raise_in_transactional_callbacks = true
   end
 end

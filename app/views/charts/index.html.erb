@@ -7,8 +7,13 @@
             <td><%= chart.date.strftime("%A") %></td>
             <td><%= chart.normalize_time %></td>
             <td><%= link_to 'Show', chart_path(chart)%></td>
+            <%if chart.users.first == current_user %> 
             <td><%= link_to 'Edit', edit_chart_path(chart)%></td>
             <td><%= link_to 'X', chart_path(chart), method: :delete %></td>
+            <%else%>
+            <td></td>
+            <td></td>
+            <%end%>
             <%if chart.users.first %>
             <td>Created By, <%= chart.users.first.name %></td>
             <% else %>
