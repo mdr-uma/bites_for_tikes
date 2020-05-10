@@ -21,7 +21,7 @@
             <td><%= meal.note %></td>
             <%if meal.user == current_user %> 
                 <td><%= link_to 'Edit', edit_meal_path(meal)%></td>
-                <td><%= link_to 'X',meal_path(meal), method: :delete, class:"btn-danger" %></td>
+                <td><%= link_to 'X',meal_path(meal), method: :delete, data: { confirm: 'Are you sure?'}, class:"btn-danger" %></td>
             <%else%>
                 <td></td>
                 <td></td>
