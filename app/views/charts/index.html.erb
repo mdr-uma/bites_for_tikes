@@ -20,7 +20,7 @@
             <td><%= link_to 'Show', chart_path(chart)%></td>
             <%if chart.users.first == current_user %> 
                 <td><%= link_to 'Edit', edit_chart_path(chart)%></td>
-                <td><%= link_to 'X', chart_path(chart), method: :delete, class:"btn-danger"%></td>
+                <td><%= link_to 'X', chart_path(chart), method: :delete, data: { confirm: 'Are you sure?'}, class:"btn-danger"%></td>
             <%else%>
                 <td></td>
                 <td></td>
