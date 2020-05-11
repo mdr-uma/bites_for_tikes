@@ -1,16 +1,21 @@
 class UsersController < ApplicationController
     before_action :require_logged_in, except: [:new, :create]
     
-    def index
-        
-    end
-    
     def new
        @user = User.new 
     end
 
     def show
-        @user = User.find(params[:id])
+        @user = User.find_by(id: params[:id])
+        if @user.nil?
+            redirect_to root_path, alert: "User not found"
+        elsif
+            current_user != @user
+            redirect_to root_path,
+            alert: "This account doesn't belongs to you."
+        else
+            @user
+        end
     end
 
     def create
