@@ -1,8 +1,13 @@
 class ChartsController < ApplicationController
+    include SetChart
     before_action :require_logged_in
+    before_action only: [:show, :edit, :update, :destroy] do
+        set_chart(params[:id])
+    end
+
     
     def index   
-        @charts = Chart.all.most_recent   
+        @charts = Chart.most_recent   
     end
     
     def new
@@ -10,30 +15,25 @@ class ChartsController < ApplicationController
     end
     
     def show
-        @chart = Chart.find(params[:id])
     end
     
     def create
         @chart = Chart.new(chart_params)
         if @chart.save
-            redirect_to chart_path(@chart),
-            notice: "Successfully created a chart."
+            redirect_to chart_path(@chart), notice: "Successfully created a chart."
         else
             render :new
         end
     end
 
     def edit
-        @chart = Chart.find(params[:id])
-        if current_user.id != @chart.id
-            redirect_to charts_path,
-            alert: "You don't have access to edit this chart."
+        if current_user.name != @chart.users.first.name
+            redirect_to charts_path, alert: "You don't have access to edit this chart."
         end
     end
 
     def update
-        @chart = Chart.find(params[:id])
-        if @chart.update(chart_params) #(date: params[:chart][:date], days: params[:chart][:days], time: params[:chart][:time])
+        if @chart.update(chart_params) 
             redirect_to charts_path
         else
             render :edit
@@ -41,7 +41,6 @@ class ChartsController < ApplicationController
     end
 
     def destroy
-        @chart = Chart.find(params[:id]) 
         @chart.destroy
         redirect_to charts_path   
     end
@@ -51,4 +50,5 @@ class ChartsController < ApplicationController
     def chart_params
         params.require(:chart).permit(:date, :time)
     end
+   
 end
