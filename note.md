@@ -40,7 +40,6 @@ child
 
 
 To do
- -fix the about page's picture(needs to be small and centered)
 
 
 
