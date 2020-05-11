@@ -1,5 +1,5 @@
 class Chart < ApplicationRecord
-    scope :most_recent, -> {order("date desc")}
+    scope :most_recent, -> {order("created_at desc")}
     has_many :meals, dependent: :destroy
     has_many :users, through: :meals
 
