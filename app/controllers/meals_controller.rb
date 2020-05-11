@@ -1,22 +1,30 @@
 class MealsController < ApplicationController
+    include SetChart
     before_action :require_logged_in
+    before_action :set_meal, only: [:show, :edit, :update, :destroy]
+    before_action only: [:new] do
+        set_chart(params[:chart_id])
+    end
+    
     
     def index
         if params[:chart_id].present?
-            @chart = Chart.find_by(id: params[:chart_id])
-            @meals = @chart.meals
+            if @chart = Chart.find_by(id: params[:chart_id])
+                @meals = @chart.meals
+            else
+                redirect_to charts_path, alert:"Chart not found"
+            end
         else
             @meals = Meal.all
         end
     end
 
     def new
-        @chart = Chart.find_by(id: params[:chart_id])
+        # @chart = Chart.find_by(id: params[:chart_id])
         @meal = @chart.meals.build
     end
 
     def show
-        @meal = Meal.find(params[:id])
     end
 
     def create
@@ -29,15 +37,13 @@ class MealsController < ApplicationController
     end
 
     def edit
-        @meal = Meal.find(params[:id])
-        if current_user.id != @meal.id
+        if current_user.name != @meal.user.name
             redirect_to chart_meals_path(@meal.chart),
             alert: "You don't have access to edit this meal."
         end
     end
 
     def update
-        @meal = Meal.find(params[:id])
         if @meal.update(meal_params) 
             redirect_to chart_meals_path(@meal.chart)
         else
@@ -46,7 +52,6 @@ class MealsController < ApplicationController
     end
 
     def destroy 
-        @meal = Meal.find(params[:id])
         @meal.destroy
         redirect_to chart_meals_path(@meal.chart)
     end
@@ -55,6 +60,10 @@ class MealsController < ApplicationController
 
     def meal_params
         params.require(:meal).permit(:meal_name, :meal_type, :note, :chart_id, :user_id)
+    end
+
+    def set_meal
+        redirect_to root_path, alert: "Meal not found" unless @meal = Meal.find_by(id: params[:id])
     end
 
 end
