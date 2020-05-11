@@ -132,9 +132,6 @@ body {
     background-color: rgb(24, 115, 151);
 }
 
-// .background-img {
-//     background-image: url('https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2018-12/10666-21_Homemade_Baby_Food_Recipes_1296x728-header.jpg?w=1155&h=1528');
-// }
 
 /* --------------------------------- about page ------------------------------- */
 
@@ -142,9 +139,13 @@ body {
     box-sizing: border-box;
 }
 
-.column {
-    width: 30.33%;
-    padding: 5px;
+.img {
+    width: 100%;
+    padding: 10px;
+}
+
+.img-about {
+    width: 230px;
     margin: 0 auto;
     display: block;
 }
