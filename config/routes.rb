@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # get 'welcome/home'
   root 'welcome#home'
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'
@@ -7,6 +6,8 @@ Rails.application.routes.draw do
   delete '/signout' => 'sessions#destroy'
   get 'about' => 'about#index'
   get 'auth/facebook/callback' => 'sessions#create'
+  get 'auth/github/callback' => 'sessions#create'
+
   
   resources :charts do 
     resources :meals, only: [:new, :show, :index]

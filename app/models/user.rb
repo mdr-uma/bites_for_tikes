@@ -9,9 +9,10 @@ class User < ApplicationRecord
     validates :password, length: { in: 6..20 }
 
     def self.find_or_create_by_omniauth(auth)
-        oauth_email = auth["info"]["email"] || auth["info"]["name"]
+        oauth_email = auth["info"]["email"]
         self.where(:email => oauth_email).first_or_create do |user|
-            user.password = SecureRandom.hex
+            user.password = SecureRandom.hex(10)
+            user.name = auth["info"]["name"] || auth["info"]["nickname"]
         end
     end
 
