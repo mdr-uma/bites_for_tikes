@@ -8,7 +8,7 @@
       <button class="btn btn-success" type="submit">Search</button>
     </form> %>
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active px-lg-4">
+          <li class="nav-item px-lg-4">
               <%= link_to 'Home', root_path, class:"nav-link text-uppercase text-expanded" %>
           </li>
           <li class="nav-item px-lg-4">
@@ -24,8 +24,8 @@
           <li class="nav-item px-lg-4">
               <%= link_to 'Sign Out', signout_path, method: :delete, class:"nav-link text-uppercase text-expanded" %>
           </li>
-          <li class="nav-item px-lg-4">
-            <h6>Hi,<%= current_user.name %>!</h6>
+          <li class="nav-item active px-lg-4">
+            <%= link_to current_user.name, user_path(current_user), class:"nav-link text-uppercase text-expanded"%>
           </li>
           <% else %>
           <li class="nav-item px-lg-4">
