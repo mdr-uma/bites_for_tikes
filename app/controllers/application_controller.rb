@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
     end
 
     def require_logged_in
-        redirect_to signin_path unless logged_in?
+        redirect_to signin_path, alert: "You must sign in first." unless logged_in?
     end
 end
