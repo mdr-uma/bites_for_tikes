@@ -35,8 +35,9 @@
     <% end %>
     </tbody>
 </table>
-    <%= link_to 'Create Another Meal', new_chart_meal_path(@chart), class:"btn btn-success" %> <br>
-    <br>
+    <%= link_to 'Create Another Meal', new_chart_meal_path(@chart), class:"btn btn-success" %>
+    <hr>
+    <%= link_to "Go Back", chart_path(current_user),class:"btn btn-info"%>
 <%else%>
     <%= render "index" %>
 <% end %>
