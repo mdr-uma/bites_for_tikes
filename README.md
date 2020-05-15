@@ -14,9 +14,11 @@ And then execute:
     $ bundle install
 
 ### Usage
-Step 1) Run: rake db:migrate after cloning the repository.
-Step 2) Run: rails s
-Open your browser and go to localhost:3000.
+    Step 1) Run: rake db:migrate after cloning the repository.
+
+    Step 2) Run: rails s
+
+    Open your browser and go to localhost:3000
 
 ### Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/'mdr-uma'/bites_for_tikes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
