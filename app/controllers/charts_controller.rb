@@ -9,6 +9,14 @@ class ChartsController < ApplicationController
     def index   
         @charts = Chart.most_recent   
     end
+
+    def search
+        if params[:search].blank?  
+            redirect_to(root_path, alert: "Empty field!")
+        else  
+            @charts = Chart.search(params[:search])
+        end  
+    end
     
     def new
         @chart = Chart.new
@@ -27,7 +35,7 @@ class ChartsController < ApplicationController
     end
 
     def edit
-        if current_user.name != @chart.users.first.name
+        if @chart.users.first && current_user.name != @chart.users.first.name
             redirect_to charts_path, alert: "You don't have access to edit this chart."
         end
     end
