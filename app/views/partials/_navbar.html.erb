@@ -3,11 +3,13 @@
     <a class="navbar-brand" href="#">
       <%= image_tag("meal-plan.jpg", alt:"Logo", style:"width:40px;")%>
     </a>
-    <%# <form class="form-inline" action="/action_page.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-success" type="submit">Search</button>
-    </form> %>
         <ul class="navbar-nav mx-auto">
+          <li>
+            <%= form_tag(search_path, method: 'get') do %>
+              <%= text_field_tag :q %>
+              <%= submit_tag 'Q', class: "btn-success" %>
+            <% end %>
+          </li>
           <li class="nav-item px-lg-4">
               <%= link_to 'Home', root_path, class:"nav-link text-uppercase text-expanded" %>
           </li>

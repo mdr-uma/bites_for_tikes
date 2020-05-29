@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'about' => 'about#index'
   get 'auth/facebook/callback' => 'sessions#create'
   get 'auth/github/callback' => 'sessions#create'
+  get '/search' => 'meals#search'
 
   
   resources :charts do 

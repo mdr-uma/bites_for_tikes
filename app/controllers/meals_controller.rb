@@ -24,6 +24,10 @@ class MealsController < ApplicationController
         @meal = @chart.meals.build
     end
 
+    def search
+        @meals = Meal.meals_by_meal_type(params[:q]).meals_by_user(current_user)
+    end
+
     def show
     end
 
