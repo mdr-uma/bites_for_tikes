@@ -5,6 +5,8 @@ ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
+gem "activesupport", ">= 6.0.3.1"
+
 # Use sqlite3 as the database for Active Record
 
 gem 'bootstrap-sass', '2.3.2.0'
@@ -32,6 +34,8 @@ gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem "actionpack", ">= 6.0.3.1"
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
