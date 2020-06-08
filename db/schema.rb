@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_05_09_025212) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "charts", force: :cascade do |t|
     t.datetime "date"
     t.datetime "time"
@@ -23,8 +26,8 @@ ActiveRecord::Schema.define(version: 2020_05_09_025212) do
     t.string "meal_type"
     t.string "meal_name"
     t.text "note"
-    t.integer "user_id"
-    t.integer "chart_id"
+    t.bigint "user_id"
+    t.bigint "chart_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chart_id"], name: "index_meals_on_chart_id"
