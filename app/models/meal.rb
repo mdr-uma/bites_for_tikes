@@ -6,5 +6,6 @@ class Meal < ApplicationRecord
 
      scope :meals_by_meal_type, -> (name) {where(meal_type: name)}
      scope :meals_by_user, -> (name) {where(user_id: name)}
+     scope :by_user, -> (name) {Meal.joins(:user).where("name = ?", name)}
     
 end

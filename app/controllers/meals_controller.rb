@@ -26,6 +26,9 @@ class MealsController < ApplicationController
 
     def search
         @meals = Meal.meals_by_meal_type(params[:q]).meals_by_user(current_user)
+        if @meals.empty?
+            @meals = Meal.by_user(params[:q])
+        end
     end
 
     def show
