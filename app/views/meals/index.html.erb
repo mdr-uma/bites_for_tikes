@@ -1,46 +1,45 @@
 <div class="container">
-
-<% if @chart %>
-<h3>Here is <%= @chart.date.strftime("%A") %>'s menu</h3>
-  <table class="table table-hover">
-    <thead>
-    <tr class="table-danger">
-        <th>Meal type</th>
-        <th>Name</th>
-        <th>Note</th>
-        <th>Edit</th>
-        <th>Remove</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @meals.each do |meal| %>
-      <tr class="table-info">
-            <td><%= meal.meal_type %></td>
-            <td><%= meal.meal_name %></td>
-            <td><%= meal.note %></td>
-            <%if meal.user == current_user %> 
-                <td><%= link_to 'Edit', edit_meal_path(meal)%></td>
-                <td><%= link_to 'X',meal_path(meal), method: :delete, data: { confirm: 'Are you sure?'}, class:"btn-danger" %></td>
-            <%else%>
-                <td></td>
-                <td></td>
-            <%end%>
-            <%if meal.user %>
-                <td>Created By, <%= meal.user.name %></td>
-            <% else %>
-                <td></td>
+    <% if @chart %>
+    <h3>Here is <%= @chart.date.strftime("%A") %>'s menu</h3>
+        <table class="table table-hover">
+            <thead>
+            <tr class="table-danger">
+                <th>Meal type</th>
+                <th>Name</th>
+                <th>Note</th>
+                <th>Edit</th>
+                <th>Remove</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @meals.each do |meal| %>
+            <tr class="table-info">
+                    <td><%= meal.meal_type %></td>
+                    <td><%= meal.meal_name %></td>
+                    <td><%= meal.note %></td>
+                    <%if meal.user == current_user %> 
+                        <td><%= link_to 'Edit', edit_meal_path(meal)%></td>
+                        <td><%= link_to 'X',meal_path(meal), method: :delete, data: { confirm: 'Are you sure?'}, class:"btn-danger" %></td>
+                    <%else%>
+                        <td></td>
+                        <td></td>
+                    <%end%>
+                    <%if meal.user %>
+                        <td>Created By, <%= meal.user.name %></td>
+                    <% else %>
+                        <td></td>
+                    <% end %>
+                </tr>
             <% end %>
-        </tr>
+            </tbody>
+        </table>
+        <%= link_to 'Create Another Meal', new_chart_meal_path(@chart), class:"btn btn-success" %>
+        <br/><br/>
+        <%= link_to "Go Back", chart_path(@chart),class:"btn btn-info"%>
+    <%else%>
+        <%= render "index" %>
     <% end %>
-    </tbody>
-</table>
-    <%= link_to 'Create Another Meal', new_chart_meal_path(@chart), class:"btn btn-success" %>
-    <hr>
-    <%= link_to "Go Back", chart_path(@chart),class:"btn btn-info"%>
-<%else%>
-    <%= render "index" %>
-<% end %>
 </div>
            
             
