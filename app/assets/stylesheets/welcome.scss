@@ -1,6 +1,3 @@
-// Place all the styles related to the Welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 :root {
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;
@@ -30,7 +27,6 @@ body {
 
 .card-signin .card-img-left {
     width: 50%;
-    /* Link to your background image using in the property below! */
     background: scroll center url('https://imgix.bustle.com/uploads/shutterstock/2020/1/4/726d169e-f89c-4576-8555-67d73b36c34b-shutterstock-1189042489.jpg?w=960&h=540&fit=crop&crop=faces&auto=format%2Ccompress&cs=srgb&q=70');
     background-size: cover;
 }
@@ -78,7 +74,6 @@ body {
     display: block;
     width: 100%;
     margin-bottom: 0;
-    /* Override default `<label>` margin */
     line-height: 1.5;
     color: #495057;
     border: 1px solid transparent;
@@ -149,9 +144,6 @@ body {
     margin: 0 auto;
     display: block;
 }
-
-
-/* Clearfix (clear floats) */
 
 .row::after {
     content: "";
