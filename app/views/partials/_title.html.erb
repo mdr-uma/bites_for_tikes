@@ -1,4 +1,11 @@
 <h1 class="site-heading text-center text-white d-none d-lg-block">
+    <%= image_tag("meal-plan.jpg", alt:"Logo", style:"width:60px;")%>
     <span>Bites for Tikes</span>
 </h1>
-    <p>Meals planner for kids</p>
+<p class="small">Meals planner for children</p>
+<div class="container d-flex justify-content-center">
+    <%= form_tag(search_path, method: 'get') do %>
+        <%= text_field_tag :q %>
+        <%= submit_tag 'Q', class: "btn-success" %>
+    <% end %>
+</div>
