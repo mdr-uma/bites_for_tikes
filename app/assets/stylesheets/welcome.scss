@@ -130,9 +130,9 @@ body {
 
 /* --------------------------------- about page ------------------------------- */
 
-* {
-    box-sizing: border-box;
-}
+// * {
+//     box-sizing: border-box;
+// }
 
 .img {
     width: 100%;
@@ -145,11 +145,11 @@ body {
     display: block;
 }
 
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
+// .row::after {
+//     content: "";
+//     clear: both;
+//     display: table;
+// }
 
 h5 {
     text-align: center;
@@ -179,4 +179,11 @@ span {
 #current-user {
     position: absolute;
     right: 15%;
+}
+
+.user-name{
+    position: absolute;
+    top: -120px;
+    right: 30px;
+    margin-left: 15px;
 }
