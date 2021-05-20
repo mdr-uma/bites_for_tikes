@@ -130,10 +130,6 @@ body {
 
 /* --------------------------------- about page ------------------------------- */
 
-// * {
-//     box-sizing: border-box;
-// }
-
 .img {
     width: 100%;
     padding: 10px;
@@ -144,12 +140,6 @@ body {
     margin: 0 auto;
     display: block;
 }
-
-// .row::after {
-//     content: "";
-//     clear: both;
-//     display: table;
-// }
 
 h5 {
     text-align: center;
@@ -169,13 +159,6 @@ span {
     font-family: Sofia;
 }
 
-#search-bar {
-    position: absolute;
-    left: 15%;
-    top: 30%;
-    margin-right: 30px;
-}
-
 #current-user {
     position: absolute;
     right: 15%;
@@ -186,4 +169,10 @@ span {
     top: -120px;
     right: 30px;
     margin-left: 15px;
+}
+
+footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
 }
