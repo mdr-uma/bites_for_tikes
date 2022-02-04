@@ -1,6 +1,7 @@
 # Bites for Tikes
+## Meals planner for children 
 
-This rails portfolio app is build for busy parents who don't have time to plan meals for their kids everyday. This app will provide a chart, where they can plan their meals(breakfast, lunch & dinner) in advance for a whole week. They can sign up, login, log out, create a chart, add, update and delete the meals they created. I will be more than happy if this will make your life little easier. Enjoy!
+This rails portfolio app is build for busy parents who don't have time to plan meals for their children everyday. This app will provide a chart, where they can plan their meals(breakfast, lunch & dinner) in advance. They can sign up, login, log out, create a chart, add, update and delete the meals they created. I will be more than happy if this will make your life little easier. Enjoy!
 
 ![Alt text](app/assets/images/bitesfortikes.png "image")
 [Go Live](https://btf-heroku-rails.herokuapp.com/)
