@@ -12,5 +12,7 @@
       </div>
               
         <%= f.submit "Sign In", class:"btn btn-lg btn-primary btn-block text-uppercase"%>
+        <%= link_to ('<i class="fab fa-github mr-2"></i> Sign in with Github').html_safe, "/auth/github", class:"btn btn-lg btn-danger btn-block text-uppercase" %>
+        <%= link_to ('<i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook').html_safe, "/auth/facebook", class:"btn btn-lg btn-facebook btn-primary btn-block text-uppercase" %>
         <%= render partial: 'partials/signup_footer'%>
   <% end %>
