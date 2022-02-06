@@ -1,13 +1,43 @@
-  <div class="container" style="width:60%;">
-    <div class="row">
-      <div class="col-lg-10 col-xl-9 mx-auto">
-        <div class="card card-signin flex-row my-5">
-          <div class="card-img-left d-none d-md-flex">
-             <!-- Background image for card set in CSS! -->
-          </div>
+<div class="container" style="width:60%;">
+  <div class="row">
+    <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="card card-signin flex-row my-5">
+        <div class="card-img-left d-none d-md-flex">
+        </div>
           <div class="card-body">
             <h5 class="card-title text-center">Sign Up</h5>
-             <div class="form-signin">  
-              
+            <div class="form-signin">  
+              <%= form_for @user do |f|%>
+                <div class="form-label-group">
+                    <%= f.text_field :name, placeholder: "Username", autofocus: true, class: "form-control", id: "inputUsername", required: true  %>
+                    <%= f.label :Username, for: "inputUsername" %>
+                </div> 
+                <hr>
+                <div class="form-label-group">
+                    <%= f.email_field :email, placeholder: "Email address", class: "form-control", id: "inputEmail", required: true %>
+                    <%= f.label :email, for: "inputEmail" %>
+                </div>                 
+                <hr>
+                <div class="form-label-group">
+                    <%= f.password_field :password, placeholder: "password", class: "form-control", id: "inputPassword", required: true %>
+                    <%= f.label :password, for: "inputPassword" %>
+                </div>                        
+                <hr>
+                <div class="form-label-group">
+                    <%= f.password_field :password_confirmation, placeholder: "Confirm password", class: "form-control", id: "inputConfirmPassword", required: true %>
+                    <%= f.label :Confirm_password, for: "inputConfirmPassword" %>
+                </div>
+                <hr>
+                <%= f.submit "Sign Up", class:"btn btn-lg btn-primary btn-block text-uppercase"%>   
+              <% end %>
+              <hr class="my-4">
+              <%= link_to ('<i class="fab fa-github mr-2"></i> Sign in with Github').html_safe, "/auth/github", class:"btn btn-lg btn-danger btn-block text-uppercase" %>
+              <%= link_to ('<i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook').html_safe, "/auth/facebook", class:"btn btn-lg btn-facebook btn-primary btn-block text-uppercase" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
                 
   
