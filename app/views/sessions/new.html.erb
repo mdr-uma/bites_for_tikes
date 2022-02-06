@@ -1,16 +1,1 @@
 <%= render partial: "partials/signin" %>
-
-  <%= form_for @user, url: signin_path  do |f|%>
-      <div class="form-label-group">
-        <%= f.email_field :email, placeholder: "Email address", class: "form-control", id: "inputEmail", required: true %>
-        <%= f.label :email, for: "inputEmail" %>
-      </div>
-
-      <div class="form-label-group">
-        <%= f.password_field :password, placeholder: "password", class: "form-control", id: "inputPassword", required: true %>
-        <%= f.label :password, for: "inputPassword" %>
-      </div>
-              
-        <%= f.submit "Sign In", class:"btn btn-lg btn-primary btn-block text-uppercase"%>
-        <%= render partial: 'partials/signup_footer'%>
-  <% end %>
