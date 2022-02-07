@@ -1,17 +1,23 @@
 <%= render partial: "layouts/errors", locals: {object: @chart} %>
-<%= render partial: 'partials/formheader'%>
 <div class="container">
-    <h2>Chart Form</h2>
-    
-    <%= form_for @chart do |f| %>
-        <%= f.label :date %>
-        <%= f.date_field :date, min: Date.current %>
-        <hr>
-        <%= f.label :time %>
-        <%= f.time_field :time %>
-        <hr>
-        <%= f.submit class:"btn btn-success"%>
-    <% end %>
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body", style="background-color: beige;">
+            <h2>Chart Form</h2> 
+            <%= form_for @chart do |f| %>
+                <%= f.label :date %>
+                <%= f.date_field :date, min: Date.current %>
+                <hr>
+                <%= f.label :time %>
+                <%= f.time_field :time %>
+                <hr>
+                <%= f.submit class:"btn btn-success"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<%= render partial: 'partials/formsfooter'%>
 
