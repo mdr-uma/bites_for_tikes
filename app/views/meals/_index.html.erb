@@ -1,26 +1,25 @@
-   <table class="table table-hover">
+<table class="table table-hover">
     <thead>
-    <tr class="table-danger">       
-        <th>Meal type</th>
-        <th>Name</th>
-        <th>Note</th>
-        <th>Creator</th>
-    </tr>
+        <tr class="table-danger">       
+            <th>Meal type</th>
+            <th>Name</th>
+            <th>Note</th>
+            <th>Creator</th>
+        </tr>
     </thead>
     <tbody>
-
-    <% @meals.each do |meal| %>
-      <tr class="table-info">
-            <td><%= meal.meal_type %></td>
-            <td><%= meal.meal_name %></td>
-            <td><%= meal.note %></td>
-            <%if meal.user %>
-                <td>Created By, <%= meal.user.name %></td>
-            <% else %>
-                <td></td>
-            <% end %>
-        </tr>
-    <% end %>
+        <% @meals.each do |meal| %>
+            <tr class="table-info">
+                <td><%= meal.meal_type %></td>
+                <td><%= meal.meal_name %></td>
+                <td><%= meal.note %></td>
+                <%if meal.user %>
+                    <td>Created By, <%= meal.user.name %></td>
+                <% else %>
+                    <td></td>
+                <% end %>
+            </tr>
+        <% end %>
     </tbody>
 </table>
 <br>
