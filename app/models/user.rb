@@ -15,5 +15,4 @@ class User < ApplicationRecord
             user.name = auth["info"]["name"] || auth["info"]["nickname"]
         end
     end
-
 end
