@@ -57,6 +57,5 @@ class ChartsController < ApplicationController
 
     def chart_params
         params.require(:chart).permit(:date, :time)
-    end
-   
+    end   
 end

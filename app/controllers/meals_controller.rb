@@ -72,5 +72,4 @@ class MealsController < ApplicationController
     def set_meal
         redirect_to root_path, alert: "Meal not found" unless @meal = Meal.find_by(id: params[:id])
     end
-
 end
